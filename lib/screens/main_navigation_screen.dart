@@ -52,6 +52,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
           );
         },
       ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
 }
