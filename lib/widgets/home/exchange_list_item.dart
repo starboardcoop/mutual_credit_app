@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mutual_wallet/controllers/exchange.dart';
+import 'package:mutual_wallet/api/exchange.dart';
 import 'package:mutual_wallet/helpers/exchange_icon_factory.dart';
 import 'package:mutual_wallet/hours_formatter.dart';
 

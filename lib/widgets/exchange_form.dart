@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:mutual_wallet/controllers/exchange_form_controller.dart';
 
 class ExchangeForm extends StatelessWidget {
-  const ExchangeForm({Key? key, required ExchangeFormController controller})
-      : _controller = controller,
-        super(key: key);
+  const ExchangeForm({
+    Key? key,
+    required this.personController,
+    required this.amountController,
+    required this.memoController,
+  }) : super(key: key);
 
-  final ExchangeFormController _controller;
+  final TextEditingController personController;
+  final TextEditingController amountController;
+  final TextEditingController memoController;
 
   @override
   Widget build(BuildContext context) {
@@ -15,16 +19,16 @@ class ExchangeForm extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           TextFormField(
-            controller: _controller.person,
+            controller: personController,
             decoration: const InputDecoration(labelText: "Person"),
           ),
           TextFormField(
-            controller: _controller.amount,
+            controller: amountController,
             decoration: const InputDecoration(labelText: "Amount"),
             keyboardType: TextInputType.number,
           ),
           TextFormField(
-            controller: _controller.memo,
+            controller: memoController,
             decoration: const InputDecoration(labelText: "Memo"),
           ),
         ],
