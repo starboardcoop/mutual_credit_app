@@ -42,7 +42,7 @@ class _NewExchangeScreenState extends State<NewExchangeScreen> {
             label: const Text("SEND"),
             icon: const Icon(Icons.north_east),
             backgroundColor: Colors.white,
-            foregroundColor: Colors.black,
+            foregroundColor: Theme.of(context).colorScheme.onSurface,
           ),
           const SizedBox(height: 10),
           FloatingActionButton.extended(
@@ -51,8 +51,6 @@ class _NewExchangeScreenState extends State<NewExchangeScreen> {
                 submit(controller, _formController.request_exchange),
             label: const Text("REQUEST"),
             icon: const Icon(Icons.south_west),
-            backgroundColor: Colors.orange,
-            foregroundColor: Colors.black,
           ),
         ],
       ),

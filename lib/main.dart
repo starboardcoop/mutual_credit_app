@@ -29,6 +29,7 @@ class MutualCreditApp extends StatelessWidget {
         appBar: WalletAppBar(),
         body: HomeScreen(),
       ),
+      debugShowCheckedModeBanner: false,
     );
   }
 }

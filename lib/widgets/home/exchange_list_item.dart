@@ -15,7 +15,7 @@ class ExchangeListItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       child: ListTile(
-        leading: ExchangeIconFactory.getIcon(exchange.type),
+        leading: ExchangeIconFactory(context: context).getIcon(exchange.type),
         title: Text(exchange.name),
         trailing: Text(HoursFormatter.formatDecimal(exchange.amount)),
       ),
