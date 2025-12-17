@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mutual_wallet/api/exchange.dart';
-import 'package:mutual_wallet/helpers/exchange_icon_factory.dart';
-import 'package:mutual_wallet/hours_formatter.dart';
+import 'package:mutual_wallet/widgets/shared/exchange_icon_factory.dart';
+import 'package:mutual_wallet/widgets/shared/hours_formatter.dart';
 
 class ExchangeListItem extends StatelessWidget {
   final Exchange exchange;
