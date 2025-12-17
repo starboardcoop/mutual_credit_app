@@ -11,6 +11,13 @@ class ExchangeListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Consumer<ExchangeModel>(
       builder: (context, model, child) {
+        if (model.exchanges.isEmpty) {
+          return const Text(
+            'No recent exchanges.',
+            textAlign: TextAlign.center,
+          );
+        }
+
         return ListView.builder(
           itemCount: model.exchanges.length,
           itemBuilder: (_, i) => ExchangeListItem(

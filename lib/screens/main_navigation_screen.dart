@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mutual_wallet/screens/new_exchange_screen.dart';
 import 'package:mutual_wallet/widgets/exchange_button.dart';
 import 'package:mutual_wallet/widgets/home/home_view.dart';
-import 'package:mutual_wallet/widgets/shared/padding.dart';
+import 'package:mutual_wallet/widgets/shared/spacing.dart';
 
 class MainNavigationScreen extends StatefulWidget {
   const MainNavigationScreen({Key? key}) : super(key: key);
@@ -19,7 +19,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: const Padding(
-        padding: EdgeInsets.all(normalPadding),
+        padding: EdgeInsets.all(Spacing.normal),
         child: HomeView(),
       ),
       bottomNavigationBar: NavigationBar(

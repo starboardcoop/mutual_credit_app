@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mutual_wallet/widgets/shared/hours_formatter.dart';
-import 'package:mutual_wallet/widgets/shared/padding.dart';
+import 'package:mutual_wallet/widgets/shared/spacing.dart';
 
 class BalanceCard extends StatelessWidget {
   const BalanceCard({Key? key, required this.balance}) : super(key: key);
@@ -11,7 +11,7 @@ class BalanceCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card.filled(
       child: Padding(
-        padding: const EdgeInsets.all(largePadding),
+        padding: const EdgeInsets.all(Spacing.large),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
