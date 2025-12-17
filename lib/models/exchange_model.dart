@@ -1,7 +1,7 @@
 import 'dart:collection';
 
 import 'package:flutter/material.dart';
-import 'package:mutual_wallet/controllers/exchange.dart';
+import 'package:mutual_wallet/api/exchange.dart';
 
 class ExchangeModel extends ChangeNotifier {
   static final _exchanges = <Exchange>[];
