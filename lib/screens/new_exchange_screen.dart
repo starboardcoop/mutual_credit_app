@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mutual_wallet/api/exchange.dart';
 import 'package:mutual_wallet/models/exchange_model.dart';
 import 'package:mutual_wallet/models/user_model.dart';
-import 'package:mutual_wallet/widgets/exchange_form.dart';
+import 'package:mutual_wallet/widgets/new_exchange/exchange_form.dart';
 import 'package:provider/provider.dart';
 
 class NewExchangeScreen extends StatefulWidget {
@@ -24,10 +24,6 @@ class _NewExchangeScreenState extends State<NewExchangeScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Exchange"),
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back_rounded),
-          onPressed: () => Navigator.pop(context),
-        ),
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
