@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:mutual_wallet/models/exchange_model.dart';
 import 'package:mutual_wallet/screens/home_screen.dart';
 import 'package:mutual_wallet/theme_factory.dart';
-import 'package:mutual_wallet/widgets/wallet_app_bar.dart';
 import 'package:provider/provider.dart';
 
 import 'models/user_model.dart';
@@ -25,10 +24,7 @@ class MutualCreditApp extends StatelessWidget {
     return MaterialApp(
       title: 'Mutual Wallet',
       theme: ThemeFactory.get(),
-      home: const Scaffold(
-        appBar: WalletAppBar(),
-        body: HomeScreen(),
-      ),
+      home: const HomeScreen(),
       debugShowCheckedModeBanner: false,
     );
   }

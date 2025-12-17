@@ -16,6 +16,7 @@ class ExchangeListView extends StatelessWidget {
           itemBuilder: (_, i) => ExchangeListItem(
             exchange: model.exchanges[i],
           ),
+          shrinkWrap: true,
         );
       },
     );
