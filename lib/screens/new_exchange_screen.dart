@@ -3,6 +3,7 @@ import 'package:mutual_wallet/api/exchange.dart';
 import 'package:mutual_wallet/models/exchange_model.dart';
 import 'package:mutual_wallet/models/user_model.dart';
 import 'package:mutual_wallet/widgets/new_exchange/exchange_form.dart';
+import 'package:mutual_wallet/widgets/shared/spacing.dart';
 import 'package:provider/provider.dart';
 
 class NewExchangeScreen extends StatefulWidget {
@@ -15,19 +16,22 @@ class NewExchangeScreen extends StatefulWidget {
 }
 
 class _NewExchangeScreenState extends State<NewExchangeScreen> {
+  final formKey = GlobalKey<FormState>();
+
   final person = TextEditingController();
-  final amount = TextEditingController();
+  final amount = TextEditingController(text: '1');
   final memo = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Exchange"),
+        title: const Text("New Exchange"),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(Spacing.normal),
         child: ExchangeForm(
+          key: formKey,
           personController: person,
           amountController: amount,
           memoController: memo,
@@ -36,6 +40,7 @@ class _NewExchangeScreenState extends State<NewExchangeScreen> {
       floatingActionButton: Column(
         mainAxisAlignment: MainAxisAlignment.end,
         crossAxisAlignment: CrossAxisAlignment.end,
+        spacing: Spacing.normal,
         children: [
           FloatingActionButton.extended(
             heroTag: null,
@@ -45,7 +50,6 @@ class _NewExchangeScreenState extends State<NewExchangeScreen> {
             backgroundColor: Colors.white,
             foregroundColor: Theme.of(context).colorScheme.onSurface,
           ),
-          const SizedBox(height: 10),
           FloatingActionButton.extended(
             heroTag: null,
             onPressed: () => submit(ExchangeType.request),
@@ -58,6 +62,11 @@ class _NewExchangeScreenState extends State<NewExchangeScreen> {
   }
 
   void submit(ExchangeType type) {
+    final isValid = formKey.currentState?.validate() ?? false;
+    if (!isValid) {
+      return;
+    }
+
     final exchangeAmount = double.parse(amount.text);
     final exchange = Exchange(type, person.text, exchangeAmount, memo.text);
 
